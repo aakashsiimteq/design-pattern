@@ -1,0 +1,44 @@
+The facade and adapter design patterns in this series. Using facade, we can simplify large systems, and by implementing adapter we can stay safe while working with external API and classes. Now we are going to cover the decorator design pattern, which also falls under the category of structural patterns.
+We can use the decorator pattern when we just want to give some added responsibility to our base class. This design pattern is a great alternative to a sub‑classing feature for extending functionality with some added advantages.
+According to Wikipedia:
+
+The decorator pattern (also known as Wrapper, an alternative naming shared with the Adapter pattern) is a design pattern that allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class.
+
+The Problem
+if we think that we can achieve the same functionality with a sub‑classing feature as well,
+I am going to take an example of a class which is responsible for generating content for an email. In the next code block, as you can see, this class functions very well for generating email content without any modification.
+
+--------------------------------------------------------------------------------
+example Code Block:
+class christmasEmail extends eMailBody {
+  public function loadBody() {
+    parent::loadBody();
+    $this->body .= "Added Content for Xmas<br />";
+  }
+}
+// instantiating the class
+$christmasEmail = new christmasEmail();
+$christmasEmail->loadBody();
+echo $christmasEmail->body;
+
+So I am done with my code, and after a few days I want to send an email with New Year's greetings.
+We can use the same method as we did for Christmas.
+
+class newYearEmail extends eMailBody {
+  public function loadBody() {
+    parent::loadBody();
+    $this->body .= "Added Content for New Year<br />";
+  }
+}
+// instantiating the class
+$newYearEmail = new newYearEmail();
+$newYearEmail->loadBody();
+echo $newYearEmail->body;
+--------------------------------------------------------------------------------
+
+This went smoothly without any more issues. Now let's say I forget to greet my visitors for both occasions (Christmas and New Year) and I want to send both greetings in one email, without modifying any code in the base class.
+
+Your mind gets filled immediately with the following question: Will sub-classes and inheritance help here? I would be in favor of going that way, but we will need to use extra/unnecessary code to achieve this. We can use traits which enable us to implement something similar to multiple inheritance.
+
+The Solution
+The problem which we have discussed in the previous section can be resolved by implementing the decorator pattern.
