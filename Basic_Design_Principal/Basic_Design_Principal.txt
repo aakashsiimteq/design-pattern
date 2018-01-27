@@ -2,12 +2,19 @@ What is Design pattern in general?
 
 In software engineering, a design pattern is a general repeatable solution to a commonly occurring problem in software design. A design pattern isn't a finished design that can be transformed directly into code. It is a description or template for how to solve a problem that can be used in many different situations.
 
-Why should we use design patterns in programming? 
+Why should we use design patterns in programming?
 Our code can work just fine without it. To that, the counter question would be: "Would you rather live in a luxurious home, or in a simple establishment with four walls?" After all, both serve our purpose.
 
 Generally, we look for a luxurious home because it offers better facilities and requires less maintenance, and maintenance can done with less hassle because the basic groundwork is already there.
 
 The same thing applies to programming: Code that employs design patterns is easy to understand, easy to maintain, and easy to extend.
+
+Design rules are separated into four categories:
+
+creational patterns
+structural patterns
+behavioral patterns
+concurrency patterns
 
 Uses of Design Patterns
 
