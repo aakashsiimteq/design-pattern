@@ -1,0 +1,13 @@
+Facade Design Pattern
+
+It falls under the category of structural patterns because it deals with how your code should be structured to make it easily intelligible and keep it well maintained in the long term.
+
+Problem
+Let's assume that you have a few operations to be made in sequence, and that the same action is required in multiple places within your application. You have to place the same code again and again in different places. You have done that, but after a few days you find that something needs to be changed in that code.
+
+Do you see the problem? We have to introduce the changes in all of the places that the code exists. It's painful, isn't it?
+
+Solution
+As a solution, what you should be doing is to create a lead controller, which handles all of the repeating code. From the calling point of view, we will just call the lead controller to perform actions based on the parameters provided.
+
+Now if we need to introduce any change in the process, then we will just need to change the lead controller instead of making the change in all places where we used that code.
