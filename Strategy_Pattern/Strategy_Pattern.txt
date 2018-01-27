@@ -1,0 +1,29 @@
+Refer to Strategy_Pattern_problem,Strategy_Pattern_solution & Strategy_Pattern for code reference and follow along.
+
+
+The Strategy Design Pattern, which falls under Behavioral Design Patterns.You might have a question: when we should use this design pattern? I would say, when we have several ways (algorithms) to perform the same operation and we want the application to pick the specific way based on the parameters you have. This pattern is also known as a policy pattern.
+A very simple example for this article would be the sorting feature. For example, we have multiple algorithms for sorting arrays, but based on the number of elements of the array, we should choose which algorithm to use that yields the best performance.This pattern is also known as a policy pattern.
+
+The Problem
+I will take an example of an eCommerce website having multiple payment gateways integrated. Although the site has multiple payment gateways, as per the requirements they won't all show up in the front end. Instead, the appropriate payment gateway needs to be selected on the fly based on the cart amount.
+
+Using a simple example, then, if the cart value is less than $500, the payment should be processed using the PayPal standard, but if it is $500 or more then it should be processed using stored credit card details (assuming the details are already stored).
+
+At first, we will have main classes for both paying via Paypal and paying via credit card, which are added below.
+(refer to Strategy_Pattern_problem.php)
+
+Here you might say that we need to place conditional statements to make our code work. Imagine the number of changes you need to make when we require new changes in that logic or you have caught a bug in that logic. We will have to add a patch to all those places where we have used that code.
+
+The Solution
+We will implement the same requirement, but with the use of the Strategy pattern, which enables us to make our code more clear, understandable and extendable.
+
+The Interface
+First, we will implement the interface that will be used by all of the different payment gateway classes. Ultimately, these are our strategies. (refer to Strategy_Pattern_problem.php for code)
+Next we will create our main class, which can use a different strategy than we have implemented so far.
+
+Adding a New Strategy
+If at a later stage a user needed to add a new strategy (new payment gateway here) with some different logic, it would be very simple in this case. Let's say we want to add a new payment gateway, moneybooker, and want to process money when the cart amount is more than $500 but less than $1,000.All we need to do is create a new strategy class which implements our interface and we are good to go.
+
+Conclusion
+Hence to conclude, when we have multiple ways to perform the same task (in software language when we have multiple algorithms to perform the same operation), we should consider implementing the Strategy pattern.By using this pattern,
+we are free to add/remove an algorithm because switching of these algorithms is not transparent to the application.
