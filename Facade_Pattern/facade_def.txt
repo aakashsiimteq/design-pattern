@@ -1,4 +1,4 @@
-Facade Design Pattern
+Facade Design Pattern (Please refer to code in the facade_pattern.php)
 
 It falls under the category of structural patterns because it deals with how your code should be structured to make it easily intelligible and keep it well maintained in the long term.
 
@@ -11,3 +11,13 @@ Solution
 As a solution, what you should be doing is to create a lead controller, which handles all of the repeating code. From the calling point of view, we will just call the lead controller to perform actions based on the parameters provided.
 
 Now if we need to introduce any change in the process, then we will just need to change the lead controller instead of making the change in all places where we used that code.
+
+Example
+In this tutorial, let's choose one lesson so that it makes things more readable. Let's say that you have been given a task to plan your friend's marriage. If you do everything on your own, then imagine the things you need to cover. It will create a higher possibility for error, and increase the chance of missing something that can drastically affect your friend's wedding.
+
+In this case, instead of doing everything on your own, you should use a wedding planner and make sure the job gets done in a well-managed manner with less chance of a mistake.
+
+Here, you are behaving as a client who initiates the process, and the wedding planner is working as a "facade" for you, completing the job based on your direction.
+
+Conclusion
+Simply put, we can say that the facade pattern should be carried out in a situation where you need a single interface to complete multiple procedures, as in the example of the wedding planner who is working as a facade for you to complete multiple procedures.
